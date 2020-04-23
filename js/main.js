@@ -46,6 +46,12 @@
 
 
 
+//zad5
+// let regExp = /Задания/gi;
+// let containerClass = document.querySelector('.container').innerHTML;
+// let result = Array.from(containerClass.matchAll(regExp));
+// console.log(result);
+
 
 //zad6
 // let elem = document.querySelectorAll('strong');
@@ -66,3 +72,79 @@
 // let hyperLink = document.getElementsByTagName('a');
 // let css = window.getComputedStyle(hyperLink[1]).getPropertyValue('color');
 // console.log(css);
+
+
+
+
+
+
+
+//#Tasks#2
+//zad8
+window.addEventListener('DOMContentLoaded', function(){
+    
+    alert('Добро пожаловать');
+    
+})
+
+
+//zad9
+
+let btn = document.querySelector('#btn');
+btn.addEventListener('click', () => {
+    if(document.body.style.backgroundColor == 'red')
+        document.body.style.backgroundColor = 'white';
+    else  document.body.style.backgroundColor = 'red';    
+})
+
+
+//zad10
+let inpEmail = document.querySelector('.inp-email');
+let inpText = document.querySelector('.inp-text');
+let btn2 = document.querySelector('#btn-2');
+let name = document.querySelector('.name');
+let email = document.querySelector('.email');
+
+inpEmail.addEventListener('input', e => {
+    email.innerText = e.target.value;
+})
+
+inpText.addEventListener('input', e => {
+    name.innerText = e.target.value;
+})
+
+let k = document.createElement('h2');
+btn2.addEventListener('click', e => {
+    if(inpText.value == '' || inpEmail.value == ''){
+    e.preventDefault();
+    form.after(k);
+    k.innerText = 'Все поля обьязательны к заполнению';
+    }
+})
+
+
+
+//zad11
+let left = document.querySelector('.left');
+let right = document.querySelector('.right');
+let img = document.querySelector('img');
+let i = 0;
+
+right.addEventListener('click', () =>{
+    i+=100;
+    img.style.marginLeft = `${i}px`;
+    img.style.transition = '0.3s';
+})
+
+left.addEventListener('click', () =>{
+    i-=100;
+    img.style.marginLeft = `${i}px`;
+    img.style.transition = '0.3s';
+})
+
+
+//zad12
+document.addEventListener('mousemove', (e) => {
+    console.log(`X = ${e.clientX} Y = ${e.clientY}`);
+    
+})
